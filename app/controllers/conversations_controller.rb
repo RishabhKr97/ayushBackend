@@ -15,6 +15,12 @@ class ConversationsController < ApplicationController
     @messages = @conversation.messages
     @message = Message.new
   end
+  
+  def close
+    @conversation = Conversation.find(params[:id])
+ 
+    session[:conversations].delete(@conversation.id)
+  end
 
   private
   def conversation_params
