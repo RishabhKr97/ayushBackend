@@ -9,7 +9,7 @@ module ApplicationCable
     protected
  
     def find_verified_user
-      if (current_user.uid = session[:id])    #to check user is logged in or not
+      if (current_user.uid == session[:id])    #to check user is logged in or not
         current_user
       else
         reject_unauthorized_connection

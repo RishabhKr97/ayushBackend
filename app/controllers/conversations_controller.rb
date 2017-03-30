@@ -14,7 +14,7 @@ class ConversationsController < ApplicationController
     @reciever = interlocutor(@conversation)
     @messages = @conversation.messages
     @message = Message.new
-    render json: { recipient_id: @reciever, @messages, @message }
+    render json: { recipient_id: @reciever, messages: @messages}
   end
   
   def add_to_conversations
@@ -36,4 +36,4 @@ class ConversationsController < ApplicationController
   def interlocutor(conversation)
     current_user == conversation.recipient ? conversation.sender : conversation.recipient
   end
-end
+ 
