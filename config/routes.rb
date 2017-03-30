@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   #For chat
    
-  get 'chat#index' 
+  get 'chat', to: 'chat#index' 
   resources :conversations, only: [:create] do
     member do
       post :close

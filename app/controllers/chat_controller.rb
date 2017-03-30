@@ -1,10 +1,9 @@
 class ChatController < ApplicationController
   def index
-  session[:conversations] || =[]
+  session[:conversations] ||= []
 
   @users = User.all.where(id: interlocutor(current_user.conversations)
-  @conversations = Conversation.includes(:recipient, :messages)
-                               .find(session[:conversations])
+  @conversations = Conversation.includes(:recipient,:messages).find(session[:conversations])
   render json: @users, @conversations
   end
 
