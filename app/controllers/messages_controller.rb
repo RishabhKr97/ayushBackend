@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @message.save!
 
     @path = conversation_path(@conversation)
+    render json: @path
   end
 
   private

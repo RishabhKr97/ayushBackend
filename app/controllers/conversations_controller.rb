@@ -14,6 +14,12 @@ class ConversationsController < ApplicationController
     @reciever = interlocutor(@conversation)
     @messages = @conversation.messages
     @message = Message.new
+    render json: { recipient_id: @reciever, @messages, @message }
+  end
+  
+  def add_to_conversations
+    session[:conversations] ||= []
+    session[:conversations] << @conversation.id
   end
   
   def close
