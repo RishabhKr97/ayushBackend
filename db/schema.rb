@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 20170328165139) do
+ActiveRecord::Schema.define(version: 20170331140124) do
 
   create_table "appointments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "patient_id"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20170328165139) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
   end
 
+<<<<<<< HEAD
+=======
+  create_table "diagnostics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> master
   create_table "diseases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "speciality"
@@ -80,10 +89,13 @@ ActiveRecord::Schema.define(version: 20170328165139) do
     t.datetime "updated_at",                    null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+<<<<<<< HEAD
   end
 
   create_table "pathologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
+=======
+>>>>>>> master
   end
 
   create_table "patients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -102,15 +114,13 @@ ActiveRecord::Schema.define(version: 20170328165139) do
     t.index ["mobile"], name: "index_patients_on_mobile", using: :btree
   end
 
-  create_table "radiologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-  end
-
   create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "service"
-    t.integer "service_id"
-    t.integer "institution_id"
-    t.integer "rate"
+    t.string   "service"
+    t.integer  "service_id"
+    t.integer  "institution_id"
+    t.integer  "rate"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "timeslots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
