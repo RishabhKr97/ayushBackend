@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170331140124) do
 
   create_table "appointments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -44,15 +43,12 @@ ActiveRecord::Schema.define(version: 20170331140124) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
   end
 
-<<<<<<< HEAD
-=======
   create_table "diagnostics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
->>>>>>> master
   create_table "diseases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "speciality"
@@ -89,13 +85,6 @@ ActiveRecord::Schema.define(version: 20170331140124) do
     t.datetime "updated_at",                    null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
-<<<<<<< HEAD
-  end
-
-  create_table "pathologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-=======
->>>>>>> master
   end
 
   create_table "patients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
