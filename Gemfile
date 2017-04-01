@@ -21,6 +21,11 @@ gem 'puma', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Use for image upload
+gem 'carrierwave', '~>0.9'
+
+#Use for minimising image size
+gem 'mini_magick', '~>4.3'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rubocop', '~> 0.46.0', require: false
 
