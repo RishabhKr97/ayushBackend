@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :institutions do
+
+post '/signup', to: 'institutions#create'
+resources :institutions do
   	get '/history' , to: 'institutions#history'
     resources :locations
     resources :clinicals
@@ -15,29 +17,8 @@ Rails.application.routes.draw do
  get 'search/services', to: 'search#services'
  resources :timeslots
  resources :rates
- resources :patients
- resources :videos
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  #For chat
-   
-  #get 'chat', to: 'chat#index' 
- # resources :conversations, only: [:create] do
-  #  member do
-   #   post :close
-   # end
-  #end
- #For chat test
-mount ActionCable.server => '/cable'
-    scope 'api' do
-      namespace :v1 do
-         resources :messages, only: [:index, :create]
-      end
-      resources :conversation, only: [:create] do
-         member do
-          post :close
-         end
-      end 
-    end
+
+ resources :videos
 
 end
