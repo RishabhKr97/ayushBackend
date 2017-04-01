@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401033929) do
+ActiveRecord::Schema.define(version: 20170401054633) do
 
   create_table "appointments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "patient_id"
@@ -80,11 +80,11 @@ ActiveRecord::Schema.define(version: 20170401033929) do
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "body",            limit: 65535
     t.integer  "conversation_id"
-    t.integer  "user_id"
+    t.integer  "sender"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
-    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+    t.index ["sender"], name: "index_messages_on_sender", using: :btree
   end
 
   create_table "patients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -135,6 +135,6 @@ ActiveRecord::Schema.define(version: 20170401033929) do
   add_foreign_key "appointments", "patients"
   add_foreign_key "appointments", "timeslots"
   add_foreign_key "messages", "conversations"
-  add_foreign_key "messages", "users"
+  add_foreign_key "messages", "users", column: "sender"
   add_foreign_key "timeslots", "institutions"
 end

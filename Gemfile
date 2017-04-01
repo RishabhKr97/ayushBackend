@@ -12,12 +12,18 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
+
+gem 'active_model_serializers'
+gem 'decent_exposure', '~> 3.0.0'
+gem 'kaminari'
+ 
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -26,7 +32,14 @@ gem 'rubocop', '~> 0.46.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+    gem 'byebug', platform: :mri
+    gem 'rspec-rails', '~> 3.5'
+    gem 'rspec-collection_matchers'
+    gem 'factory_girl_rails'
+    gem 'simplecov', require: false
+    gem 'database_cleaner'
+    gem 'shoulda-matchers'
+    gem 'faker'
 end
 
 group :development do
