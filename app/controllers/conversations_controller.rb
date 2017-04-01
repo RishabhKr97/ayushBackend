@@ -5,7 +5,7 @@ class ConversationsController < ApplicationController
     else
       @conversation = Conversation.create!(conversation_params)
     end
-
+    add_to_conversations
     render json: { conversation_id: @conversation.id }
   end
 
@@ -36,4 +36,4 @@ class ConversationsController < ApplicationController
   def interlocutor(conversation)
     current_user == conversation.recipient ? conversation.sender : conversation.recipient
   end
- 
+end 
