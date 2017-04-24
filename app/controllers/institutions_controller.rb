@@ -4,11 +4,11 @@ class InstitutionsController < ApplicationController
 
   def login
     response = {}
-    i =Institution.find_by(:user_id => params[:institution_id])
-    if i
-      if i.authenticate(params[:password])
+    p =Institution.find_by(:user_id => params[:institution_id])
+    if p
+      if p.authenticate(params[:password])
         response['message'] = "Success"
-        response['id'] = i.id
+        response['id'] = p.id
       else
         response['message'] = "Invalid Password"
       end
