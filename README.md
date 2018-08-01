@@ -1,24 +1,10 @@
-# README
+# E-Consultation Portal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Backend for the online portal to bridge the gap between doctors and patients in rural areas.
+Implements following API's for the project:
+* Finding hospitals based on search criteria.
+* Scheduling appointments.
+* Video confrencing with the patient.
+* Digital prescription
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project was selected for the grand finale of the smart indie hackathon.
