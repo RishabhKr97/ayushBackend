@@ -7,4 +7,4 @@ Implements following API's for the project:
 * Video confrencing with the patient.
 * Digital prescription
 
-This project was selected for the grand finale of the smart indie hackathon.
+This project was selected for the grand finale of the smart india hackathon.
